@@ -204,6 +204,7 @@ hide_edge_borders smart
 default_border pixel
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
+
 bindsym Mod4+x exec emacsclient -c
 bindsym Mod4+c exec google-chrome
 
