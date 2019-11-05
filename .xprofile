@@ -7,5 +7,5 @@ fi
 # set editor to emacs, using daemon in terminal mode
 export EDITOR="emacsclient -c"
 if [ -z "$(pidof -s emacs)" ]; then
-   emacs --daemon &> /dev/null &
+   emacs --daemon --with-x-toolkit=lucid &> /dev/null &
 fi
