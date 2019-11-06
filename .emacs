@@ -43,13 +43,24 @@
 	)
 (use-package moe-theme)
   :config
-  (custom-set-variables
-   '(custom-enabled-themes (quote (moe-dark)))
-   '(custom-safe-themes
-     (quote
-      ("26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
-   '(package-selected-packages (quote (rust-mode))))
-  (custom-set-faces)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (moe-dark)))
+ '(custom-safe-themes
+	 (quote
+		("26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
+ '(package-selected-packages (quote (idomenu rust-mode))))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
   (load-theme 'moe-dark t)
 
 ;;------------------------------------------------------------------------------
@@ -85,6 +96,10 @@
 (global-linum-mode t)
 (setq linum-format "%3d")
 
+
+(add-to-list 'default-frame-alist '(font . "monospace 14" ))
+(set-face-attribute 'default t :font "monospace 14")
+
 ;; Unbind Pesky Sleep Button
 (global-unset-key [(control z)])
 (global-unset-key [(control x)(control z)])
@@ -103,3 +118,6 @@
 ;; highlight parentheses
 (setq show-paren-delay 0)
 (show-paren-mode 1)
+
+;; imenu settings
+(global-set-key (kbd "C-c C-i") 'helm-semantic-or-imenu)

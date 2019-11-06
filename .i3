@@ -109,12 +109,12 @@ bindsym Mod4+minus scratchpad show
 set $ws1 "Human"
 set $ws2 "Com"
 set $ws3 "Work"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws4 "For"
+set $ws5 "S"
+set $ws6 "666"
+set $ws7 "t?"
+set $ws8 "inf"
+set $ws9 "3**3"
 set $ws10 "Server"
 
 # Set default workspaces
