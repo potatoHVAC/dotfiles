@@ -91,9 +91,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias be='bundle exec'
-alias wos='cd ~/work/outreach/server'
-
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -125,3 +122,8 @@ fi
 
 export OUTREACH_PROJECT_ROOT="$HOME/work"
 export EDITOR="emacsclient -c"
+
+# Work related shortcuts
+alias be='bundle exec'
+alias wos='cd ~/work/outreach/server'
+alias dev='cd ~/work/dev-environment'
