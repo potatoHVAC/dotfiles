@@ -123,7 +123,11 @@ fi
 export OUTREACH_PROJECT_ROOT="$HOME/work"
 export EDITOR="emacsclient -c"
 
+# Use to restart the touch pad when it stops working. System reboot required.
+alias derp_pad='sudo apt install --reinstall xserver-xorg-input-synaptics & sudo reboot'
+
 # Work related shortcuts
 alias be='bundle exec'
 alias wos='cd ~/work/outreach/server'
 alias dev='cd ~/work/dev-environment'
+alias skiptest='OUTREACH_DEV_SKIP_TEST_TENANCY_REBUILD=false'
