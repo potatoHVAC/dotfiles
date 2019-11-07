@@ -1,3 +1,0 @@
-#!/bin/bash
-# Use to restart the touch pad when it stops working. System reboot required.
-sudo apt install --reinstall xserver-xorg-input-synaptics
