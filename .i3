@@ -53,12 +53,6 @@ bindsym Mod4+$down focus down
 bindsym Mod4+$up focus up
 bindsym Mod4+$right focus right
 
-# alternatively, you can use the cursor keys:
-bindsym Mod4+Left focus left
-bindsym Mod4+Down focus down
-bindsym Mod4+Up focus up
-bindsym Mod4+Right focus right
-
 # move focused window
 bindsym Mod4+Shift+$left move left
 bindsym Mod4+Shift+$down move down
@@ -147,7 +141,6 @@ bindsym Mod4+Shift+8 move container to workspace $ws8
 bindsym Mod4+Shift+9 move container to workspace $ws9
 bindsym Mod4+Shift+0 move container to workspace $ws10
 
-
 # reload the configuration file
 bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -210,3 +203,17 @@ bindsym Mod4+c exec google-chrome
 
 # Lock screen
 bindsym Mod4+p exec i3lock -i /home/steep/Pictures/wallpaper/work.png -t
+
+bindsym Mod4+Left move workspace to output left
+bindsym Mod4+Right move workspace to output right
+bindsym Mod4+Up move workspace to output up
+bindsym Mod4+Down move workspace to output down
+
+# Pulse Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+#bindsym Fn+F6 exec xbacklight -inc 20 # increase screen brightness
+#bindsym Fn+F5 exec xbacklight -dec 20 # decrease screen brightness
