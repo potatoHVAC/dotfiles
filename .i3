@@ -178,8 +178,8 @@ bindsym Mod4+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-				position top
-        status_command i3status
+  status_command i3status
+	position top
 }
 
 #######################################################################
@@ -210,10 +210,10 @@ bindsym Mod4+Up move workspace to output up
 bindsym Mod4+Down move workspace to output down
 
 # Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-#bindsym Fn+F6 exec xbacklight -inc 20 # increase screen brightness
-#bindsym Fn+F5 exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -dec 20 # decrease screen brightness

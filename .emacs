@@ -12,8 +12,13 @@
 (setq use-package-always-ensure t)
 
 (use-package rust-mode)
-;;(use-package go-mode)
-(use-package autopair)
+(use-package go-mode
+	:config
+	(setq gofmt-command "goimports")
+	(add-hook 'before-save-hook 'gofmt-before-save))
+(use-package autopair
+	:config
+	(defun turn-on-autopair-mode () (autopair-mode 1)))
 (use-package yaml-mode)
 (use-package toml-mode)
 (use-package haskell-mode)
@@ -24,7 +29,6 @@
 	(setq helm-locate-fuzzy-match t)
 	(setq helm-semantic-fuzzy-match t
       helm-imenu-fuzzy-match    t)
-	(helm-autoresize-mode t)
   :bind
   ("M-x" . helm-M-x)
   ("C-x r b" . helm-filtered-bookmarks)
@@ -39,8 +43,7 @@
   (add-hook 'ruby-mode-hook 'projectile-mode)
   (add-hook 'enh-ruby-mode-hook 'projectile-mode)
   (setq projectile-indexing-method 'alien)
-  (setq projectile-enable-caching t)
-	)
+  (setq projectile-enable-caching t))
 (use-package moe-theme)
   :config
 
