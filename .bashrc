@@ -116,19 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# asdf setup
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
 # add ~/dotfiles/bin to PATH
 export PATH="${PATH:+${PATH}:}$HOME/dotfiles/bin"
 
 # Set emacs as default editor
 export EDITOR="emacsclient -c"
 alias emacs='emacsclient -c'
-
-# Use to restart the touch pad when it stops working. System reboot required.
-alias derp_pad='sudo apt install --reinstall xserver-xorg-input-synaptics && sudo reboot'
 
 #---------------------------------------------------------------------------------------------------
 #   Work
@@ -145,5 +138,6 @@ export OUTREACH_PROJECT_ROOT="$HOME/work"
 # add ~/work/bin to path for work scripts
 export PATH="${PATH:+${PATH}:}$HOME/work/bin"
 
-
-
+# asdf setup
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
