@@ -3,3 +3,4 @@ cp ~/dotfiles/.emacs ~/.emacs.d/init.el
 cp ~/dotfiles/.xprofile ~/.xprofile
 cp ~/dotfiles/.i3 ~/.i3/config
 cp ~/dotfiles/.i3status.conf ~/.i3status.conf
+cp ~/dotfiles/.bashrc ~/.bashrc
