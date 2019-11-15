@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -la --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -116,20 +116,34 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# asdf setup
 . $HOME/.asdf/asdf.sh
-
 . $HOME/.asdf/completions/asdf.bash
 
-export OUTREACH_PROJECT_ROOT="$HOME/work"
+# add ~/dotfiles/bin to PATH
+export PATH="${PATH:+${PATH}:}$HOME/dotfiles/bin"
+
+# Set emacs as default editor
 export EDITOR="emacsclient -c"
+alias emacs='emacsclient -c'
 
 # Use to restart the touch pad when it stops working. System reboot required.
-alias derp_pad='sudo apt install --reinstall xserver-xorg-input-synaptics & sudo reboot'
+alias derp_pad='sudo apt install --reinstall xserver-xorg-input-synaptics && sudo reboot'
+
+#---------------------------------------------------------------------------------------------------
+#   Work
+#---------------------------------------------------------------------------------------------------
 
 # Work related shortcuts
 alias be='bundle exec'
 alias wos='cd ~/work/outreach/server'
 alias dev='cd ~/work/dev-environment'
 alias skiptest='OUTREACH_DEV_SKIP_TEST_TENANCY_REBUILD=false'
-alias ls='ls -la'
-alias emacs='emacsclient -c'
+
+export OUTREACH_PROJECT_ROOT="$HOME/work"
+
+# add ~/work/bin to path for work scripts
+export PATH="${PATH:+${PATH}:}$HOME/work/bin"
+
+
+
