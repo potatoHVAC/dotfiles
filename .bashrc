@@ -131,7 +131,7 @@ alias emacs='emacsclient -c'
 alias be='bundle exec'
 alias wos='cd ~/work/outreach/server'
 alias dev='cd ~/work/dev-environment'
-alias skiptest='OUTREACH_DEV_SKIP_TEST_TENANCY_REBUILD=false'
+alias skiptest='OUTREACH_DEV_SKIP_TEST_TENANCY_REBUILD=false OUTREACH_DEV_SEED_TEST_TENANCY_FROM_CACHE=false'
 
 export OUTREACH_PROJECT_ROOT="$HOME/work"
 
