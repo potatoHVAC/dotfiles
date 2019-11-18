@@ -112,7 +112,16 @@ set $ws9 "3**3"
 set $ws10 "Server"
 
 # Set default workspaces
-workspace "Com" output eDP-1
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output HDMI-1
+workspace $ws4 output HDMI-1
+workspace $ws5 output HDMI-1
+workspace $ws6 output HDMI-1
+workspace $ws7 output DP-2
+workspace $ws8 output DP-2
+workspace $ws9 output DP-2
+workspace $ws0 output HDMI-1
 
 # Set workspace wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper/work.jpg
@@ -195,7 +204,6 @@ exec i3-config-wizard
 
 hide_edge_borders smart
 default_border pixel
-workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
 
 bindsym Mod4+x exec emacsclient -c
