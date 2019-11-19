@@ -102,19 +102,19 @@ bindsym Mod4+minus scratchpad show
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "Human"
 set $ws2 "Com"
-set $ws3 "Work"
-set $ws4 "For"
-set $ws5 "S"
-set $ws6 "666"
-set $ws7 "t?"
-set $ws8 "inf"
-set $ws9 "3**3"
+set $ws3 "Read"
+set $ws4 "Work4"
+set $ws5 "Work5"
+set $ws6 "Work6"
+set $ws7 "Tall7"
+set $ws8 "Tall8"
+set $ws9 "Tall9"
 set $ws10 "Server"
 
 # Set default workspaces
 workspace $ws1 output eDP-1
 workspace $ws2 output eDP-1
-workspace $ws3 output HDMI-1
+workspace $ws3 output eDP-1
 workspace $ws4 output HDMI-1
 workspace $ws5 output HDMI-1
 workspace $ws6 output HDMI-1
@@ -149,6 +149,11 @@ bindsym Mod4+Shift+7 move container to workspace $ws7
 bindsym Mod4+Shift+8 move container to workspace $ws8
 bindsym Mod4+Shift+9 move container to workspace $ws9
 bindsym Mod4+Shift+0 move container to workspace $ws10
+
+# move focuse to monitor
+bindsym Mod4+F1 focus output eDP-1
+bindsym Mod4+F2 focus output HDMI-1
+bindsym Mod4+F3 focus output DP-2
 
 # reload the configuration file
 bindsym Mod4+Shift+c reload
