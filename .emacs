@@ -1,6 +1,25 @@
 (set-background-color "#313632")
 
 ;;------------------------------------------------------------------------------
+;;  use-package fresh install
+;;------------------------------------------------------------------------------
+(require 'package)
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
+(package-initialize)
+
+;; Bootstrap 'use-package'
+(eval-after-load 'gnutls
+  '(add-to-list 'gnutls-trustfiles "/etc/ssl/cert.pem"))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
+(setq use-package-always-ensure t)
+
+;;------------------------------------------------------------------------------
 ;;  Packages
 ;;------------------------------------------------------------------------------
 (require 'package)
@@ -82,7 +101,7 @@
 ;;------------------------------------------------------------------------------
 (setq inhibit-startup-screen t)
 (setq column-number-mode t)
-
+(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 (setq-default show-trailing-whitespace t)
 (setq-default tab-width 2)
 
