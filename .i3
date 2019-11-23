@@ -17,13 +17,6 @@ font pango:monospace 12
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn't scale on retina/hidpi displays.
-
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up l
@@ -207,8 +200,8 @@ bar {
 #######################################################################
 exec i3-config-wizard
 
-hide_edge_borders smart
-default_border pixel
+hide_edge_borders none
+default_border pixel 4
 force_display_urgency_hint 500 ms
 
 bindsym Mod4+x exec emacsclient -c
@@ -228,5 +221,5 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessDown exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight -dec 20 # decrease screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -dec 20 # decrease screen brightness
