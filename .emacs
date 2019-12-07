@@ -33,14 +33,19 @@
 (use-package rust-mode)
 (use-package go-mode
 	:config
-	(setq gofmt-command "goimports")
-	(add-hook 'before-save-hook 'gofmt-before-save))
+  (defun go-save-hook ()
+    (setq gofmt-command "goimports")
+    (add-hook 'before-save-hook 'gofmt-before-save))
+  (add-hook 'go-mode-hook 'go-save-hook))
 (use-package autopair
 	:config
 	(defun turn-on-autopair-mode () (autopair-mode 1)))
 (use-package yaml-mode)
 (use-package toml-mode)
 (use-package haskell-mode)
+(use-package terraform-mode
+	:config
+	(custom-set-variables '(terraform-indent-level 2)))
 (use-package helm
   :config
   (helm-mode 1)
@@ -75,7 +80,10 @@
  '(custom-safe-themes
 	 (quote
 		("26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
- '(package-selected-packages (quote (idomenu rust-mode))))
+ '(package-selected-packages
+	 (quote
+		(yasnippet lsp-treemacs helm-lsp company-lsp flycheck-rust flycheck-inline flycheck lsp-mode idomenu rust-mode)))
+ '(terraform-indent-level 2))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -84,6 +92,33 @@
  ;; If there is more than one, they won't work right.
  )
   (load-theme 'moe-dark t)
+
+;; lsp things
+(use-package lsp-mode
+  :config (add-hook 'prog-mode-hook 'lsp)
+  :commands lsp)
+(use-package flycheck
+  :config (global-flycheck-mode))
+(use-package flycheck-inline
+  :config
+  (with-eval-after-load 'flycheck
+    (add-hook 'flycheck-mode-hook #'flycheck-inline-mode)))
+(use-package flycheck-rust
+  :config
+  (with-eval-after-load 'rust-mode
+    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
+;; (use-package lsp-ui
+;;   :hook ((lsp-mode . lsp-ui-mode))
+;;   :commands lsp-ui-mode)
+(use-package company-lsp
+  :commands company-lsp)
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+(use-package yasnippet)
+;; optionally if you want to use debugger
+;; (use-package dap-mode)
+;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+
 
 ;;------------------------------------------------------------------------------
 ;;  Backup Directory
