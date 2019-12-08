@@ -205,10 +205,10 @@ default_border pixel 4
 force_display_urgency_hint 500 ms
 
 bindsym Mod4+x exec emacsclient -c
-bindsym Mod4+c exec google-chrome
+bindsym Mod4+c exec chromium
 
 # Lock screen
-bindsym Mod4+p exec i3lock -i /home/steep/Pictures/wallpaper/work.png -t
+bindsym Mod4+p exec i3lock -c 000000
 
 bindsym Mod4+Left move workspace to output left
 bindsym Mod4+Right move workspace to output right
