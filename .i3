@@ -206,6 +206,7 @@ force_display_urgency_hint 500 ms
 
 bindsym Mod4+x exec emacsclient -c
 bindsym Mod4+c exec chromium
+bindsym Mod4+z exec emacsclient -c ~/work/outreach/server/
 
 # Lock screen
 bindsym Mod4+p exec i3lock -c 000000
