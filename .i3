@@ -31,10 +31,10 @@ floating_modifier Mod4
 bindsym Mod4+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym Mod4+Shift+q kill
+###bindsym Mod4+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym Mod4+d exec dmenu_run
+###bindsym Mod4+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -62,15 +62,15 @@ bindsym Mod4+Shift+Right move right
 bindsym Mod4+b split h
 
 # split in vertical orientation
-bindsym Mod4+v split v
+###bindsym Mod4+v split v
 
 # enter fullscreen mode for the focused container
-bindsym Mod4+f fullscreen toggle
+###bindsym Mod4+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod4+s layout stacking
-bindsym Mod4+w layout tabbed
-bindsym Mod4+e layout toggle split
+###bindsym Mod4+s layout stacking
+###bindsym Mod4+w layout tabbed
+###bindsym Mod4+e layout toggle split
 
 # toggle tiling / floating
 bindsym Mod4+Shift+space floating toggle
@@ -79,7 +79,7 @@ bindsym Mod4+Shift+space floating toggle
 bindsym Mod4+space focus mode_toggle
 
 # focus the parent container
-bindsym Mod4+a focus parent
+###bindsym Mod4+a focus parent
 
 # focus the child container
 #bindsym Mod4+d focus child
@@ -93,65 +93,81 @@ bindsym Mod4+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "Human"
-set $ws2 "Com"
-set $ws3 "Read"
-set $ws4 "Work4"
-set $ws5 "Work5"
-set $ws6 "Work6"
-set $ws7 "Tall7"
-set $ws8 "Tall8"
-set $ws9 "Tall9"
-set $ws10 "Server"
+set $wsR "Person"
+set $wsF "Com"
+set $wsV "Server"
+set $wsQ "11:Q "
+set $wsA "21:A "
+set $wsZ "21:Z "
+set $wsW "12:W "
+set $wsS "22:S "
+set $wsX "32:X "
+set $wsE "13:E "
+set $wsD "23:D "
+set $wsC "33:C "
+
+# Define monitors
+set $mlap eDP-1
+set $m1 HDMI-1
+set $m2 DP-2
 
 # Set default workspaces
-workspace $ws1 output eDP-1
-workspace $ws2 output eDP-1
-workspace $ws3 output eDP-1
-workspace $ws4 output HDMI-1
-workspace $ws5 output HDMI-1
-workspace $ws6 output HDMI-1
-workspace $ws7 output DP-2
-workspace $ws8 output DP-2
-workspace $ws9 output DP-2
-workspace $ws0 output HDMI-1
+workspace $wsR output $mlap
+workspace $wsF output $mlap
+workspace $wsV output $m1
+workspace $wsQ output $mlap
+workspace $wsA output $mlap
+workspace $wsZ output $mlap
+workspace $wsW output $m1
+workspace $wsS output $m1
+workspace $wsX output $m1
+workspace $wsE output $m2
+workspace $wsD output $m2
+workspace $wsC output $m2
 
 # Set workspace wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper/work.jpg
 
 # switch to workspace
-bindsym Mod4+1 workspace $ws1
-bindsym Mod4+2 workspace $ws2
-bindsym Mod4+3 workspace $ws3
-bindsym Mod4+4 workspace $ws4
-bindsym Mod4+5 workspace $ws5
-bindsym Mod4+6 workspace $ws6
-bindsym Mod4+7 workspace $ws7
-bindsym Mod4+8 workspace $ws8
-bindsym Mod4+9 workspace $ws9
-bindsym Mod4+0 workspace $ws10
+#bindsym Mod4+q workspace $wsQ
+bindsym Mod4+a workspace $wsA
+bindsym Mod4+z workspace $wsZ
+bindsym Mod4+w workspace $wsW
+bindsym Mod4+s workspace $wsS
+bindsym Mod4+x workspace $wsX
+bindsym Mod4+e workspace $wsE
+bindsym Mod4+d workspace $wsD
+bindsym Mod4+c workspace $wsC
+bindsym Mod4+r workspace $wsR
+bindsym Mod4+f workspace $wsF
+bindsym Mod4+v workspace $wsV
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move container to workspace $ws1
-bindsym Mod4+Shift+2 move container to workspace $ws2
-bindsym Mod4+Shift+3 move container to workspace $ws3
-bindsym Mod4+Shift+4 move container to workspace $ws4
-bindsym Mod4+Shift+5 move container to workspace $ws5
-bindsym Mod4+Shift+6 move container to workspace $ws6
-bindsym Mod4+Shift+7 move container to workspace $ws7
-bindsym Mod4+Shift+8 move container to workspace $ws8
-bindsym Mod4+Shift+9 move container to workspace $ws9
-bindsym Mod4+Shift+0 move container to workspace $ws10
+bindsym Mod4+Shift+q move container to workspace $wsQ
+bindsym Mod4+Shift+a move container to workspace $wsA
+bindsym Mod4+Shift+z move container to workspace $wsZ
+bindsym Mod4+Shift+w move container to workspace $wsW
+bindsym Mod4+Shift+s move container to workspace $wsS
+bindsym Mod4+Shift+x move container to workspace $wsX
+bindsym Mod4+Shift+e move container to workspace $wsE
+bindsym Mod4+Shift+d move container to workspace $wsD
+bindsym Mod4+Shift+c move container to workspace $wsC
+bindsym Mod4+Shift+r move container to workspace $wsR
+bindsym Mod4+Shift+f move container to workspace $wsF
+bindsym Mod4+Shift+v move container to workspace $wsV
+
+# move workspace to focused monitor
+bindsym Mod4+q move workspace $wsQ to output current
 
 # move focuse to monitor
-bindsym Mod4+F1 focus output eDP-1
-bindsym Mod4+F2 focus output HDMI-1
-bindsym Mod4+F3 focus output DP-2
+bindsym Mod4+1 focus output $mlap
+bindsym Mod4+2 focus output $m1
+bindsym Mod4+3 focus output $m2
 
 # reload the configuration file
-bindsym Mod4+Shift+c reload
+###bindsym Mod4+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod4+Shift+r restart
+bindsym Mod4+Shift+y restart
 # exit i3 (logs you out of your X session)
 bindsym Mod4+Shift+Escape exec i3-msg exit
 
@@ -180,7 +196,7 @@ mode "resize" {
         bindsym Mod4+r mode "default"
 }
 
-bindsym Mod4+r mode "resize"
+###bindsym Mod4+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -204,17 +220,12 @@ hide_edge_borders none
 default_border pixel 4
 force_display_urgency_hint 500 ms
 
-bindsym Mod4+x exec emacsclient -c
-bindsym Mod4+c exec chromium
-bindsym Mod4+z exec emacsclient -c ~/work/outreach/server/
+#bindsym Mod4+x exec emacsclient -c
+#bindsym Mod4+c exec chromium
+#bindsym Mod4+z exec emacsclient -c ~/work/outreach/server/
 
 # Lock screen
 bindsym Mod4+p exec i3lock -c 000000
-
-bindsym Mod4+Left move workspace to output left
-bindsym Mod4+Right move workspace to output right
-bindsym Mod4+Up move workspace to output up
-bindsym Mod4+Down move workspace to output down
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
