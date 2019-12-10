@@ -141,7 +141,7 @@ alias wos='cd ~/work/outreach/server'
 alias woc='cd ~/work/outreach/client'
 alias dev='cd ~/work/dev-environment'
 alias skiptest='OUTREACH_DEV_SKIP_TEST_TENANCY_REBUILD=false OUTREACH_DEV_SEED_TEST_TENANCY_FROM_CACHE=false'
-alias startdb='bundle exec rails db:environment:set RAILS_ENV=test && bundle exec rake db:reset RAILS_ENV=test'
+alias testDBup='bundle exec rake db:reset RAILS_ENV=test'
 
 export OUTREACH_PROJECT_ROOT="$HOME/work"
 
