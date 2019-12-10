@@ -124,6 +124,14 @@ export EDITOR="emacsclient -c"
 alias emacs='emacsclient -c'
 
 #---------------------------------------------------------------------------------------------------
+#   Not fully understood
+#---------------------------------------------------------------------------------------------------
+
+# Prevents error when running `minikube version`
+# See https://github.com/PX4/Firmware/issues/9409 for more info
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+
+#---------------------------------------------------------------------------------------------------
 #   Work
 #---------------------------------------------------------------------------------------------------
 
@@ -143,3 +151,4 @@ export PATH="${PATH:+${PATH}:}$HOME/work/bin"
 # asdf setup
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
