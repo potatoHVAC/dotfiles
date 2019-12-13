@@ -31,10 +31,10 @@ floating_modifier Mod4
 bindsym Mod4+Return exec i3-sensible-terminal
 
 # kill focused window
-###bindsym Mod4+Shift+q kill
+bindsym Mod4+Escape kill
 
 # start dmenu (a program launcher)
-###bindsym Mod4+d exec dmenu_run
+bindsym Mod4+semicolon exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -59,18 +59,18 @@ bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Right move right
 
 # split in horizontal orientation
-bindsym Mod4+b split h
+bindsym Mod4+n split h
 
 # split in vertical orientation
-###bindsym Mod4+v split v
+bindsym Mod4+m split v
 
 # enter fullscreen mode for the focused container
-###bindsym Mod4+f fullscreen toggle
+bindsym Mod4+u fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 ###bindsym Mod4+s layout stacking
 ###bindsym Mod4+w layout tabbed
-###bindsym Mod4+e layout toggle split
+bindsym Mod4+i layout toggle split
 
 # toggle tiling / floating
 bindsym Mod4+Shift+space floating toggle
@@ -93,12 +93,12 @@ bindsym Mod4+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $wsR "Person"
+set $wsR "Human"
 set $wsF "Com"
 set $wsV "Server"
 set $wsQ "11:Q "
 set $wsA "21:A "
-set $wsZ "21:Z "
+set $wsZ "31:Z "
 set $wsW "12:W "
 set $wsS "22:S "
 set $wsX "32:X "
@@ -112,9 +112,6 @@ set $m1 HDMI-1
 set $m2 DP-2
 
 # Set default workspaces
-workspace $wsR output $mlap
-workspace $wsF output $mlap
-workspace $wsV output $m1
 workspace $wsQ output $mlap
 workspace $wsA output $mlap
 workspace $wsZ output $mlap
@@ -124,12 +121,15 @@ workspace $wsX output $m1
 workspace $wsE output $m2
 workspace $wsD output $m2
 workspace $wsC output $m2
+workspace $wsR output $mlap
+workspace $wsF output $mlap
+workspace $wsV output $m1
 
 # Set workspace wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper/work.jpg
 
 # switch to workspace
-#bindsym Mod4+q workspace $wsQ
+bindsym Mod4+q workspace $wsQ
 bindsym Mod4+a workspace $wsA
 bindsym Mod4+z workspace $wsZ
 bindsym Mod4+w workspace $wsW
@@ -143,7 +143,7 @@ bindsym Mod4+f workspace $wsF
 bindsym Mod4+v workspace $wsV
 
 # move focused container to workspace
-bindsym Mod4+Shift+q move container to workspace $wsQ
+#bindsym Mod4+Shift+q move container to workspace $wsQ
 bindsym Mod4+Shift+a move container to workspace $wsA
 bindsym Mod4+Shift+z move container to workspace $wsZ
 bindsym Mod4+Shift+w move container to workspace $wsW
@@ -157,12 +157,16 @@ bindsym Mod4+Shift+f move container to workspace $wsF
 bindsym Mod4+Shift+v move container to workspace $wsV
 
 # move workspace to focused monitor
-bindsym Mod4+q move workspace $wsQ to output current
+# TO DO WORK
+###bindsym Mod4+Shift+q move workspace to output right
 
 # move focuse to monitor
 bindsym Mod4+1 focus output $mlap
+bindsym Mod4+F1 focus output $mlap
 bindsym Mod4+2 focus output $m1
+bindsym Mod4+F2 focus output $m1
 bindsym Mod4+3 focus output $m2
+bindsym Mod4+F3 focus output $m2
 
 # reload the configuration file
 ###bindsym Mod4+Shift+c reload
@@ -193,10 +197,10 @@ mode "resize" {
         # back to normal: Enter or Escape or Mod4+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym Mod4+r mode "default"
+        bindsym Mod4+Tab mode "default"
 }
 
-###bindsym Mod4+r mode "resize"
+bindsym Mod4+Tab mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
