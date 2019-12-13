@@ -80,9 +80,15 @@
  '(custom-safe-themes
 	 (quote
 		("26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
+ '(minimap-automatically-delete-window nil)
+ '(minimap-dedicated-window nil)
+ '(minimap-hide-scroll-bar t)
+ '(minimap-minimum-width 26)
+ '(minimap-mode t)
+ '(minimap-window-location (quote right))
  '(package-selected-packages
 	 (quote
-		(yasnippet lsp-treemacs helm-lsp company-lsp flycheck-rust flycheck-inline flycheck lsp-mode idomenu rust-mode)))
+		(minimap yasnippet lsp-treemacs helm-lsp company-lsp flycheck-rust flycheck-inline flycheck lsp-mode idomenu rust-mode)))
  '(terraform-indent-level 2))
 
 (custom-set-faces
@@ -90,7 +96,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(minimap-active-region-background ((t (:background "#666666")))))
   (load-theme 'moe-dark t)
 
 ;; lsp things
@@ -118,6 +124,8 @@
 ;; optionally if you want to use debugger
 ;; (use-package dap-mode)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+
+(use-package minimap)
 
 
 ;;------------------------------------------------------------------------------
