@@ -164,6 +164,9 @@
 ;; Windows Style Undo
 (global-set-key [(control z)] 'undo)
 
+;; Toggle line wraping
+(global-set-key (kbd "C-c C-t") 'toggle-truncate-lines)
+
 ;; make emacs play nicely with system clipboard
 (setq x-select-enable-clipboard t)
 
