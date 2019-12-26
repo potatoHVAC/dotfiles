@@ -96,15 +96,15 @@ bindsym Mod4+minus scratchpad show
 set $wsR "Human"
 set $wsF "Com"
 set $wsV "Server"
-set $wsQ "11:Q "
-set $wsA "21:A "
-set $wsZ "31:Z "
-set $wsW "12:W "
-set $wsS "22:S "
-set $wsX "32:X "
-set $wsE "13:E "
-set $wsD "23:D "
-set $wsC "33:C "
+set $wsQ " 11:Q "
+set $wsA " 21:A "
+set $wsZ " 31:Z "
+set $wsW " 12:W "
+set $wsS " 22:S "
+set $wsX " 32:X "
+set $wsE " 13:E "
+set $wsD " 23:D "
+set $wsC " 33:C "
 
 # Define monitors
 set $mlap eDP-1
@@ -123,7 +123,7 @@ workspace $wsD output $m2
 workspace $wsC output $m2
 workspace $wsR output $mlap
 workspace $wsF output $mlap
-workspace $wsV output $m1
+workspace $wsV output $m2
 
 # Set workspace wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper/work.jpg
@@ -143,7 +143,7 @@ bindsym Mod4+f workspace $wsF
 bindsym Mod4+v workspace $wsV
 
 # move focused container to workspace
-#bindsym Mod4+Shift+q move container to workspace $wsQ
+bindsym Mod4+Shift+q move container to workspace $wsQ
 bindsym Mod4+Shift+a move container to workspace $wsA
 bindsym Mod4+Shift+z move container to workspace $wsZ
 bindsym Mod4+Shift+w move container to workspace $wsW
@@ -224,17 +224,20 @@ hide_edge_borders none
 default_border pixel 4
 force_display_urgency_hint 500 ms
 
-#bindsym Mod4+x exec emacsclient -c
-#bindsym Mod4+c exec chromium
-#bindsym Mod4+z exec emacsclient -c ~/work/outreach/server/
+bindsym Mod4+Mod1+x exec emacsclient -c
+bindsym Mod4+Mod1+c exec chromium
+bindsym Mod4+Mod1+z exec emacsclient -c ~/work/outreach/server/
+bindsym Mod4+Mod1+f exec firefox
+bindsym Mod4+Mod1+s exec signal-desktop
+
 
 # Lock screen
 bindsym Mod4+p exec i3lock -c 000000
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Sreen brightness controls
 #bindsym XF86MonBrightnessDown exec xbacklight -inc 20 # increase screen brightness
