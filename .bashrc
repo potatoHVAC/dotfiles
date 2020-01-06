@@ -137,6 +137,7 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
 # Work related shortcuts
 alias be='bundle exec'
+alias bi='bundle install --with non_rubymine'
 alias wos='cd ~/work/outreach/server'
 alias woc='cd ~/work/outreach/client'
 alias dev='cd ~/work/dev-environment'
